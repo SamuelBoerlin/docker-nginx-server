@@ -40,4 +40,4 @@ jobs:
           # and that apt-get update etc. are run again 
           pull: ${{ github.event_name == 'workflow_dispatch' }}
           no-cache: ${{ github.event_name == 'workflow_dispatch' }}
-          tags: daschswiss/nginx-server:latest, daschswiss/nginx-server:${{ steps.get_version.outputs.VERSION }}${{ (github.event_name == 'workflow_dispatch' && format('+{0}', github.run_number)) || '' }}
+          tags: daschswiss/nginx-server:latest, daschswiss/nginx-server:${{ steps.get_version.outputs.VERSION }}${{ (github.event_name == 'workflow_dispatch' && format('-{0}', github.run_number)) || '' }}
