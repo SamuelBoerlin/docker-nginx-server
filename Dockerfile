@@ -5,7 +5,7 @@ LABEL maintainer="400790+subotic@users.noreply.github.com"
 ENV NGINX_PORT 4200
 
 ## Update packages
-RUN apk update && apk upgrade
+RUN apt-get update && apt-get -y upgrade
 
 ## Copy nginx config template
 COPY config.template /etc/nginx/conf.d/config.template
